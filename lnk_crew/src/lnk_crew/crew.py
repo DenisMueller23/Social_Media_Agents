@@ -9,6 +9,8 @@ from lnk_crew.tools.custom_tool import LinkedInContentAnalyzer
 class LnkCrew:
     """LnkCrew for LinkedIn content analysis and creation"""
     
+    MAX_REVISION_ATTEMPS = 3
+    
     # Define config file paths as class attributes
     agents_config = "config/agents.yaml"
     tasks_config = "config/tasks.yaml"

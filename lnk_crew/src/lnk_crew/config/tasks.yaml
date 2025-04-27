@@ -1,10 +1,8 @@
 research_task:
   description: >
-    Conduct a thorough research about {topic}
-    Make sure you find any interesting and relevant information given
-    the current year is {current_year}. The information should have a technical focus.
+    Research the given topic {topic} thoroughly to gather insights for creating engaging LinkedIn content.
   expected_output: >
-    A list with 10 bullet points of the most relevant information about {topic}
+    Comprehensive research findings about {topic} including key trends, statistics, and industry insigts.
   agent: research_agent
 
 content_creation_task:
@@ -14,12 +12,20 @@ content_creation_task:
   expected_output: >
     Create a LinkedIn post about {topic} that considers typical LinkedIn format and well-suited 
     emjois to emphasize your major points. Always start with provocative question or statement and
-    thereafter provided clarity on the {topic}.
+    thereafter provided clarity on the {topic}. 
+    This size of the LinkedIn post should be between 200 and 300 words.
   agent: content_creation_agent
 
 manager_task:
   description: >
-    Review the LinkedIn post provided by the content creation agent and ensure it meets the highest industry standards for content quality.
+    Review and improve the LinkedIn post. Ensure it meets these cirteria:
+    1. Professional tone and language
+    2. Clear value proposition
+    3. Engaging storytelling structure
+    4. Proper formatting and appropriate use of emojis for LinkedIn
+    5. Strategic use of hashtags
+    6. Call to action
+    If any criteria are not met, revise the content accordingly.
   expected_output: >
-    A LinkedIn post about {topic} that meets the highest industry standards for content quality.
+    A LinkedIn post about {topic} that meets the all quality criteria mentioned in the description.
   agent: manager_agent
