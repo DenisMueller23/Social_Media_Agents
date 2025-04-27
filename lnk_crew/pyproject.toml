@@ -1,0 +1,23 @@
+[project]
+name = "lnk_crew"
+version = "0.1.0"
+description = "lnk_crew using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "crewai[tools]>=0.114.0,<1.0.0"
+]
+
+[project.scripts]
+lnk_crew = "lnk_crew.main:run"
+run_crew = "lnk_crew.main:run"
+train = "lnk_crew.main:train"
+replay = "lnk_crew.main:replay"
+test = "lnk_crew.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"
