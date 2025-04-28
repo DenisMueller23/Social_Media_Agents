@@ -7,12 +7,13 @@ research_task:
 
 content_creation_task:
   description: >
-    Review the context you got and create a compelling story about {topic} which is tailored 
-    for the LinkedIn audience. Make sure to use emojis to make the post look more appealing.
+    Create or revise LinkedIn content about {topic} based on:
+    - Initial research findings
+    - Specific feedback from the manager
+    - LinkedIn best practices
+
   expected_output: >
-    Create a LinkedIn post about {topic} that considers typical LinkedIn format and well-suited 
-    emjois to emphasize your major points. Always start with provocative question or statement and
-    thereafter provided clarity on the {topic}. 
+    A well-crafted LinkedIn post that incorporates all feedback and requirements about {topic}.
     This size of the LinkedIn post should be between 200 and 300 words.
   agent: content_creation_agent
 
@@ -25,7 +26,11 @@ manager_task:
     4. Proper formatting and appropriate use of emojis for LinkedIn
     5. Strategic use of hashtags
     6. Call to action
-    If any criteria are not met, revise the content accordingly.
+    
+    If improvements are needed:
+    - Delegate specific revision tasks to the Content Creation Agent
+    - Provide clear feedback on what needs to be improved
+    - Review the revised content when it returns
   expected_output: >
-    A LinkedIn post about {topic} that meets the all quality criteria mentioned in the description.
+    A final, polished LinkedIn post that meets all quality criteria about {topic}.
   agent: manager_agent
