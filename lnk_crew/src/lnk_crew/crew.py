@@ -27,10 +27,10 @@ class LnkCrew:
         self._load_configs()
         agents = [self.research_agent(), self.content_creation_agent(), self.manager_agent()]
         tasks = [self.content_creation_task(), self.research_task(), self.manager_task()]
-        self.delegate_work_tool = DelegateWorkTool(agents, tasks)
+        #self.delegate_work_tool = DelegateWorkTool(agents, tasks)
         
-    def delegate_work(self, task, context, coworker):
-        self.delegate_work_tool.delegate_work(task, context, coworker)
+    #def delegate_work(self, task, context, coworker):
+    #    self.delegate_work_tool.delegate_work(task, context, coworker)
         
     def _load_configs(self):
         """Load configuration files"""
@@ -82,14 +82,6 @@ class LnkCrew:
         # Create the agents and use the correct configurations
         available_agents = [self.research_agent(), self.content_creation_agent()]
         agent_configs = [self.agents_config['research_agent'], self.agents_config['content_creation_agent']]
-        
-        # Create delegation tools with the agents parameter 
-        delegation_tools = [
-            DelegateWorkTool(
-                agents=available_agents,
-                tasks=self.tasks_config
-            )
-        ]
 
         
         return Agent(
@@ -99,7 +91,7 @@ class LnkCrew:
             backstory=config['backstory'],
             verbose=True,
             allow_delegation=True,
-            tools=delegation_tools
+            #tools=delegation_tools
         )
 
     @task
