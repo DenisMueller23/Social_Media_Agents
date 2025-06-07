@@ -31,12 +31,12 @@ def run():
         
         # Access task results
         for task in crew.tasks:
-            logger.info(f"Task {task.name} output: {task.output}")
+            logger.info(f"Task {task.description[:50]}... output: {task.output}")
             
-        # Access agent history
-        for agent in crew.agents:
-            logger.info(f"Agent {agent.id} history: {agent.message_history}")
-            
+        # Remove the problematic agent history access
+        # The Agent object doesn't have a message_history attribute in current CrewAI version
+        logger.info("Crew execution completed successfully")
+        
         return result
             
     except Exception as e:
