@@ -35,7 +35,7 @@ def run():
             
         # Access agent history
         for agent in crew.agents:
-            logger.info(f"Agent {agent.name} history: {agent.message_history}")
+            logger.info(f"Agent {agent.id} history: {agent.message_history}")
             
         return result
             
